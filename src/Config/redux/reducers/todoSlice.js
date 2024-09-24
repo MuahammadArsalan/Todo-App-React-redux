@@ -19,10 +19,11 @@ state.todo.push({
     state.todo.splice(action.payload.index , 1)
             },
             editTodo:(state , action) =>{
-// const {index ,updateVal } = action.payload
+const {index ,updateVal } = action.payload
 
-                state.todo.splice(action.payload.index , 1 , action.payload.updateVal)
-            }
+                if (state.todo[index]) {
+                    state.todo[index].title = updateVal 
+                }   }
         }
     
     

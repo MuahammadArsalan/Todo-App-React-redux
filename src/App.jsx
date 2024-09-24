@@ -53,7 +53,7 @@ let editTodoInGlobalState =(index)=>{
 let updateVal = prompt('Enter value')
 
   console.log(index);
-  
+  if(updateVal)
 dispatch(editTodo({
   index,
   updateVal,
