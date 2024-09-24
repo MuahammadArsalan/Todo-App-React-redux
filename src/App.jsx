@@ -32,7 +32,7 @@ dispatch(addTodo({
 }))
 
 
-setInput('')
+todoValue.current.value =''
 }
 
 
@@ -67,23 +67,47 @@ dispatch(editTodo({
 <>
 
 
-<h1>Todo App</h1>
+<h1 style={{
+  textAlign:"center"
+}}> Todo App</h1>
 
-<div>
+<div style={{
+  margin:"auto",
+  textAlign:"center"
+}}>
 
-<input type="text" placeholder='Enter todo' ref={todoValue} /> <br />
+<input type="text" placeholder='Enter todo' ref={todoValue} /> <br /><br />
 
 <button onClick={()=>addTodoInGlobalState()}>Add Todo</button>
 
 </div>
 
-<ul>
+<ul style={{
+  listStyle:"none",
+  margin:"auto",
+  marginTop:"2rem",
+  width:"35vw",
+  textAlign:"center"
+}}>
   {selector.length > 0 ? selector.map((item,index)=>{
-    return <li key={item.id}>{item.title}
-          <button onClick={()=>{deleteItemFromGlobalState(index)}}>delete</button>
-          <button onClick={()=>{editTodoInGlobalState(index)}}>Update</button></li>
+    return <li style={{
+      marginTop:"1rem",
+      textAlign:"center"
+    }} key={item.id}>{item.title}
+          <button onClick={()=>{deleteItemFromGlobalState(index)}}
+            style={{
+              marginLeft:"0.5rem",
+              textAlign:"center"
+            }}>delete</button>
+          <button onClick={()=>{editTodoInGlobalState(index)}} style={{
+  marginLeft:"0.5rem",
+  textAlign:"center"
+}}>Update</button></li>
 
-  }): <h1>Not found</h1> }
+  }): <h1 style={{
+    margin:"auto",
+    textAlign:"center"
+  }}>Not found</h1> }
 </ul>
 
 
