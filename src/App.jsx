@@ -18,8 +18,7 @@ let dispatch = useDispatch()
 
 
 const selector = useSelector(state => state.todos.todo)
-  // const selector = useSelector(state => state.todos.todo);
-
+  
 console.log(selector);
 
 
