@@ -30,4 +30,5 @@ const {index ,updateVal } = action.payload
     
     })
 export const {addTodo , removeTodo , editTodo} = todoSlice.actions
+
 export default todoSlice.reducer 
